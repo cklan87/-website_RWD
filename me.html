@@ -139,35 +139,35 @@
 }
 .achievement {
     display: flex;
-    flex-direction: column; /* 保持每個成就項目垂直排列 */
+    flex-wrap: wrap; /* 允許項目換行 */
+    gap: 20px; /* 增加項目間的間距 */
+    justify-content: center; /* 在大螢幕上居中 */
+    align-items: flex-start; /* 調整對齊方式 */
 }
 
-.achievement p {
+.achievement div {
     display: flex;
+    flex-direction: column; /* 確保文字與圖片垂直排列 */
     align-items: center;
-    justify-content: flex-start;
-    margin: 5px 0;
+    text-align: center;
+    margin-bottom: 20px; /* 增加底部間距 */
 }
 
 .achievement img {
-    margin-left: 10px; /* 圖片與文字之間的間距 */
-    width: 300px; /* 根據需要調整圖片大小 */
-    height: 300px;
-    object-fit: cover; /* 保證圖片不會變形 */
+    width: 200px; 
+    height: 200px;
+    object-fit: cover; /* 確保圖片不會變形 */
+    border-radius: 10px; /* 增加圖片的圓角效果 */
+    margin-top: 10px; /* 增加文字與圖片之間的間距 */
 }
 
 @media (max-width: 768px) {
     .achievement {
-        flex-direction: column; /* 小螢幕上改為垂直排列 */
-        align-items: center;
-    }
-
-    .achievement p {
-        text-align: center;
+        flex-direction: column; /* 小螢幕時垂直排列 */
     }
 
     .achievement img {
-        width: 150px; /* 縮小圖片尺寸 */
+        width: 150px; /* 小螢幕下縮小圖片尺寸 */
         height: 150px;
     }
 }
@@ -217,15 +217,16 @@
         <p>民生國小->介壽國中->永平高中->國立臺北教育大學</p>
         <br/><br/>
         <h1>聯盟戰棋</h1>
-        <div class="achievement">
-            <div>
-                <p>s11 大師</p>
-                <img src="css/s11 m.png" alt="s11 大師圖" class="achievement-img">
-                <p>s12 大師</p>
-                <img src="css/s12 m.png" alt="s12 大師圖" class="achievement-img">
+      <div class="achievement">
+                <div>
+                    <p>s11 大師</p>
+                    <img src="css/s11 m.png" alt="s11 大師圖" class="achievement-img">
+                </div>
+                <div>
+                    <p>s12 大師</p>
+                    <img src="css/s12 m.png" alt="s12 大師圖" class="achievement-img">
+                </div>
             </div>
-           
-        </div>
     </section>
 
     <footer>
