@@ -156,6 +156,22 @@
     object-fit: cover; /* 保證圖片不會變形 */
 }
 
+@media (max-width: 768px) {
+    .achievement {
+        flex-direction: column; /* 小螢幕上改為垂直排列 */
+        align-items: center;
+    }
+
+    .achievement p {
+        text-align: center;
+    }
+
+    .achievement img {
+        width: 150px; /* 縮小圖片尺寸 */
+        height: 150px;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -202,8 +218,13 @@
         <br/><br/>
         <h1>聯盟戰棋</h1>
         <div class="achievement">
-            <p><span>s11 大師</span> <img src="css/s11 m.png" alt="s11 大師圖" class="achievement-img"><span>s12 大師</span><img src="css/s12 m.png" alt="s12 大師圖" class="achievement-img"></p>
-            
+            <div>
+                <p>s11 大師</p>
+                <img src="css/s11 m.png" alt="s11 大師圖" class="achievement-img">
+                <p>s12 大師</p>
+                <img src="css/s12 m.png" alt="s12 大師圖" class="achievement-img">
+            </div>
+           
         </div>
     </section>
 
