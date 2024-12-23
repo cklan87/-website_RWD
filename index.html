@@ -254,9 +254,26 @@
     background-color: #005f99;
 }
 
+.light {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 191, 255, 0.7) 0%, rgba(0, 0, 0, 0) 80%);
+    pointer-events: none;
+    mix-blend-mode: screen;
+    transform: translate(-50%, -50%);
+    z-index: 9999; 
+}
+html, body {
+    overflow: visible; /* 確保光影可見 */
+    height: 100%; 
+}
+
     </style>
 </head>
 <body>
+    
   <header>
     <ul class="nav">
         <li>
@@ -278,7 +295,7 @@
         </li>
     </ul>
 </header>
-
+<div class="light"></div> <!-- 光影效果 -->
     <section class="hero" id="home">
         <h1>Welcome to My Enclave</h1>
         <p>CKLan的秘密小站</p>
@@ -319,7 +336,7 @@
         <h2>其他</h2>
         <p><a href="其他.html">其他</a></p>
     </section>
-
+    
        <!-- 留言板 -->
        <div class="comment-section">
         <h3>留言板</h3>
@@ -358,6 +375,14 @@
 
       // 啟動自動播放，每3秒切換一次
       setInterval(autoMoveSlide, 3000);
+
+      // 光影跟隨效果
+      const light = document.querySelector('.light');
+document.addEventListener('mousemove', (e) => {
+    const { pageX, pageY } = e; // 確保整頁範圍的座標
+    light.style.left = `${pageX}px`;
+    light.style.top = `${pageY}px`;
+});
       
   </script>
   

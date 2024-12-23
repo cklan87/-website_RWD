@@ -99,9 +99,25 @@
             padding: 20px;
             text-align: center;
         }
+        .light {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 191, 255, 0.7) 0%, rgba(0, 0, 0, 0) 80%);
+    pointer-events: none;
+    mix-blend-mode: screen;
+    transform: translate(-50%, -50%);
+    z-index: 9999; 
+}
+html, body {
+    overflow: visible; /* 確保光影可見 */
+    height: 100%; 
+}
     </style>
 </head>
 <body>
+    <div class="light"></div> <!-- 光影效果 -->
     <header>
         <ul class="nav">
             <li>
@@ -146,4 +162,12 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
+
+    // 光影跟隨效果
+    const light = document.querySelector('.light');
+    document.addEventListener('mousemove', (e) => {
+    const { pageX, pageY } = e; // 確保整頁範圍的座標
+    light.style.left = `${pageX}px`;
+    light.style.top = `${pageY}px`;
+});
     </script>
